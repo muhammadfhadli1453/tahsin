@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!--
+      Only what is listed here is backed up: sessions, streaks and bookmarks are
+      worth restoring. Models and recordings (files/) are large and re-obtainable,
+      so they are left out by not being included.
+    -->
+    <include
+        domain="database"
+        path="tahsin_user.db" />
+    <include
+        domain="sharedpref"
+        path="." />
+</full-backup-content>

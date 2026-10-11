@@ -1,0 +1,24 @@
+Tahsin includes or redistributes the following third-party material.
+
+Quran text
+  Source:  Tanzil Project, https://tanzil.net (Uthmani and simple-imlaai text,
+           quran-data.xml metadata)
+  Files:   scripts/data/*, app/src/main/assets/databases/quran.db
+  License: Creative Commons Attribution 3.0. Per Tanzil's terms, the text is
+           shown verbatim and unchanged, credited with a link to tanzil.net in
+           the app (Settings > About). A diacritic-free copy is stored alongside
+           it for search and matching only, and Tajweed colouring is computed
+           at display time; neither alters the text shown.
+
+whisper.cpp and ggml
+  Source:  https://github.com/ggml-org/whisper.cpp (git submodule)
+  License: MIT, Copyright (c) 2023-2024 The ggml authors
+
+Quran speech model (bundled in release builds, not stored in this repository)
+  Source:  tarteel-ai/whisper-base-ar-quran, https://huggingface.co/tarteel-ai/whisper-base-ar-quran
+           converted to ggml and quantised to q5_1 by scripts/convert_whisper_model.sh
+  License: Apache License 2.0
+  Based on OpenAI Whisper (base), MIT License, Copyright (c) 2022 OpenAI
+
+Android Jetpack, Kotlin and kotlinx libraries
+  License: Apache License 2.0

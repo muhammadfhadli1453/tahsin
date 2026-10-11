@@ -1,0 +1,28 @@
+*.iml
+.gradle
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+*.apk
+*.ap_
+*.dex
+*.class
+bin/
+gen/
+out/
+app/build/
+whisper/build/
+# Keep app/src/main/assets/databases/quran.db tracked; only ignore scratch DBs.
+/scripts/*.db
+
+# Release signing: keep the keystore and its passwords out of git.
+/keystore.properties
+*.jks
+*.keystore
+# Large or generated files that must never be committed.
+app/src/main/assets/models/
+*.aab
