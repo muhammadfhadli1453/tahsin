@@ -58,10 +58,11 @@ object ModelCatalog {
         CatalogModel(
             id = "quran-finetuned",
             fileName = "ggml-base-ar-quran.bin",
-            displayName = "Quran fine-tuned (import)",
-            approxBytes = 148L * 1024 * 1024,
-            description = "Highest recitation accuracy. Convert it yourself with " +
-                "scripts/convert_whisper_model.sh, then import the .bin from storage.",
+            displayName = "Quran fine-tuned",
+            approxBytes = 57L * 1024 * 1024,
+            // Built into release builds; developers import their own conversion
+            // (scripts/convert_whisper_model.sh) into debug builds.
+            description = "Trained on Quran recitation; the most accurate here. Built into the app.",
             downloadUrl = null,
         ),
     )

@@ -56,3 +56,15 @@ Quran, recitation, tajweed, hifz, memorization, tahsin, murajaah
 ## What's new (1.0.0)
 
 First release.
+
+## Graphics (in `docs/store/`)
+
+| Play Console field | File |
+| --- | --- |
+| App icon (512 × 512) | `icon-512.png` |
+| Feature graphic (1024 × 500) | `feature-graphic-1024x500.png` |
+| Phone screenshots, in this order | `screenshots/1-recite-fatihah.png` … `5-insights.png` |
+
+The icon and feature graphic come from `scripts/make_store_graphics.py`. The
+screenshots are 1080 × 2160 phone captures with the status and navigation bars
+trimmed, because Play rejects images more than twice as tall as they are wide.

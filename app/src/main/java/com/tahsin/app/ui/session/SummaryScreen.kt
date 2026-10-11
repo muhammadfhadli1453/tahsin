@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -36,6 +37,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.tahsin.app.TahsinApplication
+import com.tahsin.app.domain.model.MistakeKind
 import com.tahsin.app.ui.components.StatTile
 import com.tahsin.app.ui.theme.arabicStyle
 
@@ -198,16 +200,12 @@ fun SummaryScreen(
                 ) {
                     Column(Modifier.padding(12.dp)) {
                         Text(
-                            text = "${mistake.surahId}:${mistake.ayahNumber} · ${mistake.kind}",
+                            text = "${mistake.surahId}:${mistake.ayahNumber} · ${mistakeKindLabel(mistake.kind)}",
                             style = MaterialTheme.typography.labelSmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant,
                         )
-                        mistake.expected?.let {
-                            Text(text = "Expected: $it", style = arabicStyle(20f))
-                        }
-                        mistake.heard?.let {
-                            Text(text = "Heard: $it", style = arabicStyle(20f))
-                        }
+                        mistake.expected?.let { LabelledArabic("Expected", it) }
+                        mistake.heard?.let { LabelledArabic("Heard", it) }
                         Text(
                             text = "at ${formatDuration(mistake.atMs)} · " +
                                 "${(mistake.confidence * 100).toInt()}% confident",
@@ -226,4 +224,31 @@ fun SummaryScreen(
             }
         }
     }
+}
+
+/**
+ * An English label beside an Arabic word. They must be separate texts: the
+ * Arabic style lays its whole line out right-to-left, which would otherwise
+ * render "Expected: X" as "X :Expected".
+ */
+@Composable
+private fun LabelledArabic(label: String, arabic: String) {
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Text(
+            text = "$label:",
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        Spacer(Modifier.width(8.dp))
+        Text(text = arabic, style = arabicStyle(20f))
+    }
+}
+
+/** Mistake kinds are stored by enum name; show them as words. */
+private fun mistakeKindLabel(kind: String): String = when (kind) {
+    MistakeKind.WrongWord.name -> "Wrong word"
+    MistakeKind.MissedWord.name -> "Skipped"
+    MistakeKind.ExtraWord.name -> "Extra word"
+    MistakeKind.Pronunciation.name -> "Pronunciation (gharib)"
+    else -> kind
 }
