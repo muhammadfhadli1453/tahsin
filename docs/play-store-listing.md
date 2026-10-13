@@ -10,40 +10,38 @@ Recite the Quran and get word-by-word feedback. Works fully offline.
 
 ## Full description (max 4000)
 
-Tahsin listens as you recite the Quran and follows along word by word, showing
-which words you read correctly, which you missed, and where you said something
-different. Everything runs on your phone: no account, no internet connection,
-and your voice never leaves your device.
+Plain text, pasted as is: Play shows no Markdown, and every line break is kept,
+so each paragraph and bullet is a single line.
 
-**Recite with feedback**
+```text
+Tahsin listens as you recite the Quran and follows along word by word, showing which words you read correctly, which you missed, and where you said something different. Everything runs on your phone: no account, no internet connection, and your voice never leaves your device.
+
+RECITE WITH FEEDBACK
 • The mushaf highlights each word as you say it, across ayahs and whole surahs
 • Mistakes are flagged as you go: wrong words, skipped words and extra words
 • Repeating a phrase or pausing to think is fine; you won't be marked down for it
 • Checks the imala in Surah Hud 41 (مَجْر۪ىٰهَا) by listening to how you voice it
 
-**Memorise**
+MEMORISE
 • Memorize mode hides the words until you recite them
 • Ask for a hint when you're stuck, or skip ahead
-• Each ayah gets a memorisation strength, and a "Needs review" list shows the
-  ayahs to revisit
+• Each ayah gets a memorisation strength, and a "Needs review" list shows the ayahs to revisit
 
-**Learn from your sessions**
+LEARN FROM YOUR SESSIONS
 • Optionally record each session, play it back and jump straight to any mistake
 • History, accuracy, your most-missed words and weakest ayahs
 • Daily goal and streaks
 
-**Read the mushaf**
+READ THE MUSHAF
 • All 114 surahs in Uthmani script, with juz and Madani page numbers
 • Tajweed colouring: ghunnah, ikhfa, idgham, iqlab, qalqalah, madd and more
-• Search that ignores diacritics, bookmarks, light and dark themes, adjustable
-  Arabic text size
+• Search that ignores diacritics, bookmarks, light and dark themes, adjustable Arabic text size
 
-**Private by design**
-Recitation checking runs entirely on your phone with a speech model trained on
-Quran recitation. Nothing is uploaded, and there are no ads or tracking.
+PRIVATE BY DESIGN
+Recitation checking runs entirely on your phone with a speech model trained on Quran recitation. Nothing is uploaded, and there are no ads or tracking.
 
-Quran text: Tanzil Project (tanzil.net). Speech model: whisper-base-ar-quran by
-Tarteel (Apache 2.0), running on whisper.cpp.
+Quran text: Tanzil Project (tanzil.net). Speech model: whisper-base-ar-quran by Tarteel (Apache 2.0), running on whisper.cpp.
+```
 
 ## Category
 
